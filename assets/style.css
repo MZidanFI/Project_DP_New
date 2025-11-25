@@ -1,0 +1,259 @@
+/* ==============================
+   FUTURISTIC NEON THEME
+============================== */
+.stApp {
+    background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==============================
+   HEADER SECTION
+============================== */
+.header {
+    text-align: center;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(0, 15, 30, 0.6);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.header h1 {
+    color: #00ffff;
+    font-weight: 700;
+    text-shadow: 0 0 10px #00ffff;
+}
+.header p {
+    color: #a3f7ff;
+    font-size: 1rem;
+}
+.header .neon-icon {
+    font-size: 3rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 5px #00eaff; }
+    to { text-shadow: 0 0 25px #00eaff; }
+}
+
+/* ==============================
+   PULSE ANIMATION
+============================== */
+.pulse {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse 3s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.2; }
+    50% { transform: translateX(-50%) scale(1.3); opacity: 0.1; }
+    100% { transform: translateX(-50%) scale(1); opacity: 0.2; }
+}
+
+/* ==============================
+   SIDEBAR STYLE
+============================== */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #141E30, #243B55);
+    color: white;
+    border-right: 2px solid rgba(0, 255, 255, 0.2);
+}
+[data-testid="stSidebar"] h2 {
+    color: #00ffff;
+}
+
+/* ==============================
+   RESULT CARD STYLE
+============================== */
+.result-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.result-icon {
+    font-size: 1.8rem;
+}
+
+/* ==============================
+   SAVE BOX
+============================== */
+.save-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 255, 200, 0.1);
+    border-left: 4px solid #00ffc8;
+    border-radius: 8px;
+    color: #aaffff;
+    font-size: 0.9rem;
+}
+
+/* ==============================
+   EMPTY UPLOAD
+============================== */
+.empty-upload {
+    text-align: center;
+    padding: 50px;
+    color: #88ffff;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* ==============================
+   VIDEO FRAME STATUS
+============================== */
+.video-frame-status {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #80e8ff;
+    text-align: center;
+}
+
+/* ==============================
+   3D NEON SPINNER
+============================== */
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.spinner {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 2s linear infinite;
+}
+.cube {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 255, 255, 0.3);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+    border-radius: 5px;
+    transform-origin: center;
+}
+.cube1 { transform: rotateX(0deg) translateZ(20px); }
+.cube2 { transform: rotateY(90deg) translateZ(20px); }
+.cube3 { transform: rotateX(180deg) translateZ(20px); }
+.cube4 { transform: rotateY(-90deg) translateZ(20px); }
+
+@keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.spinner-text {
+    margin-top: 15px;
+    color: #00ffff;
+    font-size: 0.95rem;
+    text-shadow: 0 0 10px #00ffff;
+    animation: flicker 2s infinite alternate;
+}
+@keyframes flicker {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* ==============================
+   GOOGLE ICONS BASE STYLE
+============================== */
+.material-icons, .material-symbols-outlined {
+    vertical-align: middle;
+    color: #00ffff;
+    text-shadow: 0 0 12px #00ffff;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover Animation: Neon Pulse */
+.material-icons:hover, .material-symbols-outlined:hover {
+    transform: scale(1.2) rotate(10deg);
+    text-shadow: 0 0 20px #00ffff, 0 0 30px #00e6e6;
+}
+
+/* ==============================
+   HEADER ICON ANIMATION
+============================== */
+.header .neon-icon {
+    display: inline-block;
+    font-size: 3rem;
+    color: #00ffff;
+    animation: glow 2s ease-in-out infinite alternate, rotateGlow 10s linear infinite;
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ==============================
+   SIDEBAR ICON EFFECT
+============================== */
+[data-testid="stSidebar"] .material-icons {
+    font-size: 1.5rem;
+    margin-right: 6px;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stSidebar"] .material-icons:hover {
+    color: #80ffff;
+    transform: rotate(20deg) scale(1.3);
+}
+
+/* ==============================
+   RESULT CARD GLOW EFFECT
+============================== */
+.result-card {
+    position: relative;
+    overflow: hidden;
+}
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: sweep 6s linear infinite;
+}
+@keyframes sweep {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==============================
+   CARD ICON ANIMATION
+============================== */
+.result-icon {
+    animation: flickerIcon 2.5s infinite alternate;
+}
+
+@keyframes flickerIcon {
+    from { text-shadow: 0 0 5px #00ffff; }
+    to { text-shadow: 0 0 25px #00ffff; }
+}
