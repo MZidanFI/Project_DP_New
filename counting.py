@@ -81,7 +81,7 @@ def video_counting(cap, model, enhance_image, enhance_type, confidence, writer, 
                     previous_positions[obj_id] = cy
                     cv2.circle(annotated, (cx, cy), 6, (0, 255, 0), -1)
 
-        # --- 4. TAMPILAN HUD (TABEL RAPI) ---
+        # --- 4. TAMPILAN HUD ---
         # Garis Batas
         cv2.line(annotated, (0, line_y), (width, line_y), (0, 0, 255), 2)
 
@@ -91,7 +91,7 @@ def video_counting(cap, model, enhance_image, enhance_type, confidence, writer, 
         thick = 2
         color_txt = (255, 255, 255)
         
-        # Koordinat Kolom (Fixed X) - Kunci Kerapian
+        # Koordinat Kolom
         pos_nama    = 20
         pos_titik   = 140
         pos_angka1  = 170  # Angka Turun
@@ -120,8 +120,7 @@ def video_counting(cap, model, enhance_image, enhance_type, confidence, writer, 
         for name in display_order:
             if name in counts:
                 data = counts[name]
-                
-                # Gambar elemen satu per satu sesuai kolomnya
+
                 cv2.putText(annotated, name,              (pos_nama, y_offset),   font, scale, color_txt, thick)
                 cv2.putText(annotated, ":",               (pos_titik, y_offset),  font, scale, color_txt, thick)
                 cv2.putText(annotated, str(data['in']),   (pos_angka1, y_offset), font, scale, color_txt, thick)

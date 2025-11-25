@@ -18,7 +18,6 @@ def apply_clahe(img: np.ndarray) -> np.ndarray:
 
 def apply_contrast_stretching(img: np.ndarray) -> np.ndarray:
     """Linear Contrast Stretching per channel."""
-    # Cara lebih efisien menggunakan cv2.normalize
     return cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX)
 
 def apply_brightness(img: np.ndarray, alpha=1.2, beta=30) -> np.ndarray:

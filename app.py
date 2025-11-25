@@ -54,7 +54,7 @@ def save_uploaded_file(uploaded_file, folder="inputs"):
         f.write(uploaded_file.getbuffer())
     return file_path
 
-# =============== 4. SIDEBAR SETTINGS ===============
+# ============== 4. SIDEBAR SETTINGS ==============
 st.sidebar.markdown("""<h2><span class="material-icons">tune</span> Settings</h2>""", unsafe_allow_html=True)
 
 # Global Settings

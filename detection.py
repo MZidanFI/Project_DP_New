@@ -23,13 +23,11 @@ def video_detection(cap, model, enhance_image, enhance_type, confidence, writer,
         res = results[0]
 
         # 3. Visualisasi (Bounding Boxes)
-        # Menggunakan plot() bawaan YOLO, lalu kita timpa dengan info tambahan
+        # Menggunakan plot() bawaan YOLO, lalu ditimpa dengan info tambahan
         annotated = res.plot() if hasattr(res, "plot") else frame_proc.copy()
         count = len(res.boxes) if hasattr(res, "boxes") else 0
 
-        # 4. Tambahan HUD (Kotak Info Jumlah Objek)
-        # Agar terlihat lebih profesional dan informatif
-        
+        # 4. Tambahan HUD 
         # Background Transparan Hitam
         overlay = annotated.copy()
         cv2.rectangle(overlay, (10, 10), (280, 70), (0, 0, 0), -1)
@@ -46,6 +44,6 @@ def video_detection(cap, model, enhance_image, enhance_type, confidence, writer,
         if total_frames > 0:
             progress.progress(min(frame_idx / total_frames, 1.0))
 
-        # 6. Simpan Video (Jika user mencentang Save)
+        # 6. Simpan Video (Jika mencentang Save)
         if writer:
             writer.write(annotated)
